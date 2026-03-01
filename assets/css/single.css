@@ -1,0 +1,195 @@
+/* ============================
+   Single pages — layout + componentes
+   ============================ */
+
+/* Breadcrumb (reusa de archive.css; duplica aqui para independência) */
+.ec-breadcrumb{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1rem 0 0.5rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.ec-breadcrumb a{
+  color: var(--ec-cor-link);
+  text-decoration: none;
+}
+
+.ec-breadcrumb a:hover{
+  text-decoration: underline;
+}
+
+/* Single wrapper */
+.ec-single{
+  padding: 1rem 0 2rem;
+}
+
+/* 2-column grid (media + content) */
+.ec-single__grid{
+  display: grid;
+  grid-template-columns: 0.45fr 0.55fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.ec-single__grid--full{
+  grid-template-columns: 1fr;
+}
+
+/* Media */
+.ec-single__media{
+  margin: 0;
+  display: grid;
+}
+
+.ec-single__media img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1.25rem;
+}
+
+/* Content */
+.ec-single__content{
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.ec-single__title{
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.ec-single__excerpt{
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  max-width: 65ch;
+}
+
+.ec-single__text :is(p, ul, ol){
+  max-width: 70ch;
+}
+
+.ec-single__text p + p{
+  margin-top: 0.75rem;
+}
+
+/* Meta (definition list — programação) */
+.ec-single__meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.ec-single__meta-item{
+  display: grid;
+  gap: 0.15rem;
+}
+
+.ec-single__meta-item dt{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+}
+
+.ec-single__meta-item dd{
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Footer (voltar) */
+.ec-single__footer{
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in oklab, var(--ec-cor-paragrafo), transparent 88%);
+}
+
+/* Payment block (single-ingressos) */
+.ec-payment{
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: color-mix(in oklab, var(--ec-cor-clara), transparent 35%);
+  border: 1px solid color-mix(in oklab, var(--ec-cor-paragrafo), transparent 85%);
+}
+
+.ec-payment__prices{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ec-payment__validity{
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.ec-payment__actions{
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ec-payment__pix{
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ec-payment__pix-key{
+  margin: 0;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.ec-payment__pix-key code{
+  background: color-mix(in oklab, var(--ec-cor-clara), transparent 15%);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.35rem;
+  font-size: 0.85rem;
+}
+
+/* Reuso de .ec-tag, .ec-button, .ec-button--primary, .ec-button--pix
+   — já definidos em home.css / global.css */
+
+/* Badge (reuso em single-programacao) */
+.ec-prog-card__badge{
+  display: inline-grid;
+  width: fit-content;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--ec-cor-principal), transparent 85%);
+  color: var(--ec-cor-principal);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 880px){
+  .ec-single__grid{
+    grid-template-columns: 1fr;
+  }
+  .ec-single__media img{
+    max-height: 24rem;
+    object-fit: cover;
+  }
+}

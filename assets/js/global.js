@@ -1,0 +1,1 @@
+// Global JS do tema

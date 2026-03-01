@@ -1,0 +1,231 @@
+/* ============================
+   Página de Inscrições
+   ============================ */
+
+.ec-inscricao__header{
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.ec-inscricao__header h1{
+  margin: 0;
+}
+
+.ec-inscricao__intro :is(p, ul, ol){
+  max-width: 72ch;
+}
+
+/* Honeypot (invisível) */
+.ec-hp{
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+/* Fieldsets */
+.ec-inscricao__fieldset{
+  border: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.ec-inscricao__fieldset legend{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: var(--ec-cor-titulo);
+}
+
+/* Grid de campos */
+.ec-inscricao__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1.5rem;
+}
+
+.ec-field{
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+}
+
+.ec-field--full{
+  grid-column: 1 / -1;
+}
+
+.ec-field label,
+.ec-field__label{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ec-cor-titulo);
+  margin: 0;
+}
+
+.ec-field label abbr,
+.ec-field__label abbr{
+  color: var(--ec-cor-principal);
+  text-decoration: none;
+  margin-left: 0.15em;
+}
+
+.ec-field input[type="text"],
+.ec-field input[type="email"],
+.ec-field input[type="tel"],
+.ec-field input[type="date"],
+.ec-field select{
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in oklab, var(--ec-cor-paragrafo), transparent 75%);
+  background: color-mix(in oklab, var(--ec-cor-clara), transparent 25%);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--ec-cor-paragrafo);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ec-field input:focus,
+.ec-field select:focus{
+  outline: none;
+  border-color: var(--ec-cor-principal);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ec-cor-principal), transparent 75%);
+}
+
+/* Erros */
+.ec-field--error input,
+.ec-field--error select{
+  border-color: #c0392b;
+}
+
+.ec-field__error{
+  font-size: 0.8rem;
+  color: #c0392b;
+  font-weight: 500;
+}
+
+/* Radios */
+.ec-radios{
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.ec-radio,
+.ec-checkbox{
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.ec-radio input,
+.ec-checkbox input{
+  accent-color: var(--ec-cor-principal);
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+/* Ações do form */
+.ec-inscricao__actions{
+  padding-top: 0.5rem;
+}
+
+.ec-inscricao__submit{
+  min-width: 14rem;
+}
+
+.ec-inscricao__submit:disabled{
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ============================
+   Feedback (sucesso / erro)
+   ============================ */
+.ec-alert{
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.ec-alert--success{
+  background: color-mix(in oklab, #27ae60, transparent 88%);
+  border: 1px solid color-mix(in oklab, #27ae60, transparent 55%);
+}
+
+.ec-alert--error{
+  background: color-mix(in oklab, #c0392b, transparent 88%);
+  border: 1px solid color-mix(in oklab, #c0392b, transparent 55%);
+}
+
+.ec-alert h2{
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.ec-alert h3{
+  margin: 1rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.ec-alert p{
+  margin: 0.4rem 0;
+}
+
+/* Resumo da inscrição */
+.ec-alert__summary{
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0.75rem 0;
+}
+
+.ec-alert__summary dt{
+  font-weight: 600;
+}
+
+.ec-alert__summary dd{
+  margin: 0;
+}
+
+/* Caixa Pix */
+.ec-pix-box{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.ec-pix-box__key{
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.5rem;
+  background: color-mix(in oklab, var(--ec-cor-clara), transparent 15%);
+  border: 1px dashed color-mix(in oklab, var(--ec-cor-paragrafo), transparent 65%);
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+
+.ec-alert__payment{
+  margin-top: 1rem;
+}
+
+/* ============================
+   Responsivo
+   ============================ */
+@media (max-width: 680px){
+  .ec-inscricao__grid{
+    grid-template-columns: 1fr;
+  }
+}
