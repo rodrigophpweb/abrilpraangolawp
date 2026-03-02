@@ -129,8 +129,30 @@ strong, b { font-weight: 600; }
   color: var(--ec-cor-footer-texto, inherit);
 }
 
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.site-footer__grid p:last-child {
+  text-align: right;
+}
+
 .site-footer p {
   font-size: 0.875rem;
   opacity: 0.75;
   line-height: 1.6;
+}
+
+@media (max-width: 48rem) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .site-footer__grid p:last-child {
+    text-align: center;
+  }
 }

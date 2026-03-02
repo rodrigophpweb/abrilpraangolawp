@@ -168,13 +168,8 @@
 
 .ec-abril__grid{
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
-  align-items: start;
-}
-
-.ec-abril__header{
-  grid-column: 1 / -1;
 }
 
 .ec-abril__header h2{
@@ -186,11 +181,12 @@
 }
 
 .ec-abril__content :is(p, ul, ol){
-  max-width: 70ch;
+  max-width: 100%;
 }
 
 .ec-abril__meta{
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
@@ -228,8 +224,8 @@
   opacity: 0.75;
 }
 
-@media (max-width: 880px){
-  .ec-abril__grid{
+@media (max-width: 48rem){
+  .ec-abril__meta{
     grid-template-columns: 1fr;
   }
 }

@@ -39,7 +39,7 @@ if (mb_strlen($texto) > 420) $excerpt .= '…';
         <h2><?php echo esc_html($titulo); ?></h2>
       </header>
 
-      <p><?php echo esc_html($excerpt); ?></p>
+      <?php echo get_the_content( $more_link_text = null, $strip_teaser = false, $post = $pagina ); ?>
 
       <p>
         <a class="ec-button ec-button--primary" href="<?php echo esc_url($link); ?>">
