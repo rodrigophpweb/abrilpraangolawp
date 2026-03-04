@@ -78,10 +78,11 @@
 
 .ec-single__text :is(p, ul, ol){
   max-width: 70ch;
+  margin-bottom: 1rem;
 }
 
-.ec-single__text p + p{
-  margin-top: 0.75rem;
+.ec-single__text :is(p, ul, ol):last-child{
+  margin-bottom: 0;
 }
 
 /* Meta (definition list — programação) */
